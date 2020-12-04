@@ -1,8 +1,4 @@
 # Starter pipeline
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'build'
-    projects: 'src\timepileapi.csproj'
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -14,6 +10,11 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: 'src\timepileapi.csproj'
+
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
